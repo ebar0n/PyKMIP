@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+
+  python:
+    build:
+      context: .
+      dockerfile: Dockerfile-Dev
+    volumes:
+      - ./:/app
+    working_dir: /app

@@ -10,3 +10,5 @@ PyKMIP.egg-info/
 dist/
 htmlcov/
 tags
+
+build
