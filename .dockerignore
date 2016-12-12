@@ -1,0 +1,6 @@
+*
+!bin
+!kmip
+!pykmip
+!requirements.txt
+!setup.py

@@ -2,10 +2,11 @@ version: '2'
 
 services:
 
-  python:
-    build:
-      context: .
-      dockerfile: Dockerfile-Dev
+  kmip:
+    build: .
+    working_dir: /home/app
+    command: python run_server.py
     volumes:
-      - ./:/app
-    working_dir: /app
+      - ./kmip:/home/app/kmip
+    ports:
+      - '5696:5696'

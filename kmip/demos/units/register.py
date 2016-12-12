@@ -60,10 +60,22 @@ if __name__ == '__main__':
 
     # Build the client, connect to the server, register the secret, and
     # disconnect from the server
-    client = KMIPProxy(config=config)
-
-    client.open()
-    result = client.register(object_type, template_attribute, secret)
+    client = KMIPProxy(
+        host='172.21.0.1',
+        port=5696,
+        certfile='/etc/pykmip/certs/server.crt',
+        keyfile='/etc/pykmip/certs/server.key',
+        cert_reqs='CERT_REQUIRED',
+        ssl_version='PROTOCOL_SSLv23',
+        username='user',
+        password='password',
+        config='client'
+    )
+    print (client.host_list)
+    #client.open()
+    #result = client.register(object_type, template_attribute, secret)
+    #print (result)
+    """
     client.close()
 
     # Display operation results
@@ -79,3 +91,4 @@ if __name__ == '__main__':
             result.result_reason.value))
         logger.info('register() result message: {0}'.format(
             result.result_message.value))
+    """
